@@ -7,7 +7,7 @@ function GitfindBody() {
 
 
     var [uname, setuname] = useState("")
-    var [errname, seterr] = useState("")
+    var [errname, seterr] = useState("user found")
     var [yourname, getuname] = useState({})
     const [myinns, setinn] = useState("invi")
 
@@ -52,7 +52,7 @@ function GitfindBody() {
             }).catch(error => {
                 seterr((pre) => { //safer approach
 
-                    return pre = "No user found!!!";
+                    return pre = "No user found";
 
 
                 });
@@ -62,7 +62,9 @@ function GitfindBody() {
         setinn((pp) => {
             return pp = 'vis';
         });
+        if (errname === "No user found") {
 
+        }
 
         // console.log(yourname);
         setuname((pp) => {
@@ -124,9 +126,8 @@ function GitfindBody() {
     Button > < /
     div >
         <
-        div className = "info-div" >
-
-        Name: { yourname.name } < div > < /div>
+        div className = "info-div" > < div > < /div> 
+    Name: { yourname.name } < div > < /div>
     About: { yourname.bio } < div > < /div> 
     Api Url: { yourname.url } < div > < /div> 
     Followers: { yourname.followers } < div > < /div> 
@@ -134,7 +135,7 @@ function GitfindBody() {
     Username: { yourname.login } < div > < /div> 
     User type: { yourname.type } < div > < /div> 
 
-    { errname === "" ? "" : "Error" }
+
 
 
 
