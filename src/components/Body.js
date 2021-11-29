@@ -26,6 +26,13 @@ function GitfindBody() {
 
     const handelGetUser = () => {
         //   console.log(uname);
+        seterr((pre) => { //safer approach
+
+            return pre = "";
+
+
+        });
+
 
         Axios
             .get(`https://api.github.com/users/${uname}`)
@@ -125,7 +132,9 @@ function GitfindBody() {
     Followers: { yourname.followers } < div > < /div> 
     Following: { yourname.following } < div > < /div> 
     Username: { yourname.login } < div > < /div> 
-    User type: { yourname.type }
+    User type: { yourname.type } < div > < /div> 
+
+    { errname === "" ? "" : "Error" }
 
 
 
